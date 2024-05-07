@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'web_demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "template")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,10 +77,19 @@ WSGI_APPLICATION = 'web_demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web_test',      # 数据库名称
+        'USER': 'root',     # MySQL用户名
+        'PASSWORD': '111111', # MySQL密码
+        'HOST': 'localhost',               # MySQL主机地址，如果在本地，则为localhost
+        'PORT': '3306',                    # MySQL端口号，默认为3306
+        'OPTIONS': {
+            'charset': 'utf8mb4',          # 设置字符集为utf8mb4，适用于支持emoji表情等特殊字符
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",  # 设置严格模式
+        },
     }
 }
+
 
 
 # Password validation
