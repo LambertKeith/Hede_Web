@@ -24,5 +24,5 @@ from index import views as index_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include(account_urls)), 
-    path('', include(account_urls))
+    path('', index_views.show_welcome)
 ]

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
-    'index.apps.IndexConfig',
+    'index',
 ]
 
 MIDDLEWARE = [
@@ -58,8 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "template"),
-            os.path.join(BASE_DIR, "index", "template"),
+            os.path.join(BASE_DIR, app, 'templates') for app in INSTALLED_APPS
         ],
         'APP_DIRS': True,
         'OPTIONS': {
