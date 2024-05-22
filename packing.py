@@ -14,22 +14,19 @@ class PackerParam:
         
 
 class Packer:
+    """用于将代码打包为可部署的zip包
+    """    
     def __init__(self) -> None:
         # 获取路径
         self.param = PackerParam()
-
         # 初始化操作目录
         self.make_zip_dir()
-
         # 复制项目
         self.copy_folder_contents()
-
         # 复制依赖
         self.copy_file(self.param.requirements_path, self.param.zip_folder)
-
         # 覆盖配置
         self.alter_settings()
-
         # 打包
         self.zip_folder()
 
@@ -114,3 +111,9 @@ class Packer:
                     file_path = os.path.join(root, file)
                     # 添加文件到 zip 压缩包中
                     zipf.write(file_path, os.path.relpath(file_path, folder_path))
+
+
+
+if __name__ == "__main__":
+    
+    packer = Packer()
