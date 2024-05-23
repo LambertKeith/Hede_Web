@@ -22,7 +22,7 @@ def show_index(request):
         "introduction_kv": introduction_kv,
         "management_model_intro_kv":management_model_intro_kv,
         "talent_culture_kv": talent_culture_kv,
-
+        "company_door_img": 'img/demo/公司门头2.jpg',
     }
     #print("key", list(param["introduction"].keys())[0])
     return render(request, "index.html", param)

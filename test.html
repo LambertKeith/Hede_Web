@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popup Demo</title>
+    <style>
+        /* 样式可以根据您的需要进行调整 */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: none;
+        }
+        .popup-title {
+            background-color: #5396BA;
+            color: #ffffff;
+            font-size: 14px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .popup-content {
+            line-height: 1.5;
+        }
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a class="nav-link" href="#">
+        <p id="popup-trigger">商务联系</p>
+    </a>
+
+    <div class="popup" id="popup">
+        <div class="popup-title">商务联系</div>
+        <div class="popup-content">
+            <p>我的弹窗demo</p>
+        </div>
+        <span class="popup-close">关闭</span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#popup-trigger").click(function(){
+                $("#popup").fadeIn();
+            });
+
+            $(".popup-close").click(function(){
+                if(confirm("确定要关闭吗？")) {
+                    $("#popup").fadeOut();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
