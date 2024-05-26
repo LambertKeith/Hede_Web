@@ -22,7 +22,7 @@ class GenerateTitleParamPackage:
 class GenerateHeadParamPackage:
     def __init__(self, ):
         self.head_param = index_models.HeadParam(
-            '赫德鞋服', '欢迎您', '致力于成为鞋服类电商领导品牌', 'img/demo/test.png'
+            '赫德电商', '欢迎您', '致力于成为鞋服类电商企业领导品牌', 'img/demo/test.png'
         )
 
 
@@ -48,7 +48,7 @@ class GenerateIntroductionParamPackage:
             ]
         }
         self.introduction_param_dict["1"] = index_models.IntroductionParam(
-                                                "img/demo/公司门头2.jpg",
+                                                'img/demo/test.png',
                                                 introduction_kv1
                                             )
         self.introduction_param_dict["2"] = index_models.IntroductionParam(
@@ -62,3 +62,82 @@ class GenerateIntroductionParamPackage:
 
 
 
+class GenerateCompetitiveEdgeParamPackage:
+    def __init__(self) -> None:
+        
+        self.competitive_edge_param_list = []
+        self.get_data()
+        pass
+
+
+    def get_data(self):
+        
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/鞋子设计工作图.JPG", 'overlay-blue', 
+                '强目标化管理和运营小组制', "以结果为导向，高效率、可执行、可量化", 
+                "每个小组都具备老板思维，对决策和结果负责"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/23年年会.JPG", 'overlay-red', 
+                '小组分红制', "利润透明化，激励员工创造力", 
+                "契合现代年轻人追求自由、成长的追求"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/品牌矩阵.png", 'overlay-black', 
+                '注重多品牌管理', "利润透明化，激励员工创造力", 
+                "契合现代年轻人追求自由、成长的追求"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/老板办公室.jpg", 'overlay-blue', 
+                '人才文化', "人人都要有老板思维", 
+                "培养年轻人，鼓励拥抱新技术"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/ai鞋子设计.png", 'overlay-red', 
+                '拥抱新技术', "运用AI技术提高产品展示效果", 
+                "增强品牌形象和竞争力"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/展示间.jpg", 'overlay-black', 
+                '覆盖全渠道的网络销售途径', "在电商平台和社交平台均有涉足", 
+                "实现了行业前十的业绩"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/办公室1.jpg", 'overlay-blue', 
+                '全面完善的内部数据分析系统', "精准分析各品牌和平台数据", 
+                "制定有效的销售方案和策略"
+            )
+        )
+
+        self.competitive_edge_param_list.append(
+            index_models.CompetitiveEdgeParam(
+                "img/demo/开会.JPG", 'overlay-red', 
+                '强大精细的运营团队', "超过100名专业团队成员", 
+                "杭州分公司将吸纳更多优秀人才"
+            )
+        )
+
+
+
+class GenerateContactParamPackage:
+    def __init__(self) -> None:
+        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301')

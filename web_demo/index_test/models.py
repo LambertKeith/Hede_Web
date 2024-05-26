@@ -37,9 +37,18 @@ class IntroductionParam:
 class CompetitiveEdgeParam:
     """竞争优势参数类
     """    
-    def __init__(self, bg_img, competitive_title, competitive_point1, 
+    def __init__(self, bg_img, bg_color, competitive_title, competitive_point1, 
                  competitive_point2) -> None:
         self.bg_img = bg_img
+        self.bg_color = bg_color
         self.competitive_title = competitive_title
         self.competitive_point1 = competitive_point1
         self.competitive_point2 = competitive_point2
+
+
+
+class ContactParam:
+    def __init__(self, name, mail, phone, wechet_QR=None) -> None:
+        self.name = name
+        self.mail = mail
+        self.phone = phone

@@ -36,8 +36,9 @@ def show_index(request):
     param = {
         'title': show_index_param_server.GenerateTitleParamPackage(), 
         'head': show_index_param_server.GenerateHeadParamPackage(),
-        'introduction': show_index_param_server.GenerateIntroductionParamPackage()
+        'introduction': show_index_param_server.GenerateIntroductionParamPackage(),
+        'competitive': show_index_param_server.GenerateCompetitiveEdgeParamPackage(),
+        'contact': show_index_param_server.GenerateContactParamPackage(),
     }
-
-    #print("key", list(param["introduction"].keys())[0])
+    #print(param["competitive"].competitive_edge_param_list[0].competitive_point2)
     return render(request, "index.html", {"param":param})
