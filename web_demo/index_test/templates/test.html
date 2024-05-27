@@ -1,0 +1,86 @@
+
+
+<html>
+    <body>
+        <div id="content">  
+            <div id="tab_bar">  
+                <ul>  
+                    <li id="tab1" onclick="myclick(1)" style="border-bottom: 3px solid #1DD1BC;color: #1DD1BC;">  
+                        tab1  
+                    </li>  
+                    <li id="tab2" onclick="myclick(2)">  
+                        tab2  
+                    </li>  
+                    <li id="tab3" onclick="myclick(3)">  
+                        tab3  
+                    </li>  
+                </ul>  
+            </div>  
+            <div class="tab_css" id="tab1_content" style="display: block">  
+                <div>页面一</div>  
+            </div>  
+            <div class="tab_css" id="tab2_content">  
+                <div>页面二</div>  
+            </div>  
+            <div class="tab_css" id="tab3_content">  
+                <div>页面三</div>  
+            </div>  
+        </div>  
+        <style>
+            content {
+                width: 600px;  
+                height: 200px;  
+            }
+            #tab_bar {  
+                width: 600px;
+                height: 20px;
+                float: left;
+                border-bottom: 2px solid #E9EEED; 
+            }
+            #tab_bar ul {  
+                padding: 0px;  
+                margin: 0px;  
+                height: 20px;  
+                text-align: center;  
+            }  
+            #tab_bar li {  
+                list-style-type: none;  
+                float: left;  
+                width: 133.3px;  
+                height: 20px; 
+                cursor: pointer;
+                color: #999999;
+            }  
+            .tab_css {  
+                width: 599px;  
+                height: 200px;   
+                display: none;  
+                float: left;  
+            }
+        </style>
+        <script>
+            var myclick = function(v) {  
+                var llis = document.getElementsByTagName("li");  
+                for(var i = 0; i < llis.length; i++) {  
+                    var lli = llis[i];
+                    if(lli == document.getElementById("tab" + v)) {
+                        lli.style.borderBottom = "3px solid #1DD1BC";
+                        lli.style.color = "#1DD1BC";
+                    } else {
+                        lli.style.borderBottom = "0px solid #DFDFDF";
+                        lli.style.color = "#999999";
+                    }
+                }  
+                var divs = document.getElementsByClassName("tab_css");  
+                for(var i = 0; i < divs.length; i++) {  
+                    var divv = divs[i];  
+                    if(divv == document.getElementById("tab" + v + "_content")) {  
+                        divv.style.display = "block";  
+                    } else {  
+                        divv.style.display = "none";  
+                    }  
+                }  
+            }
+        </script>
+    </body>
+</html>

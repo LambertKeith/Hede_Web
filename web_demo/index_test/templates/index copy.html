@@ -72,7 +72,14 @@
 <div class="self-content">
 
   <div class="tab_bar">
-       
+    {% comment %} <ul>
+      <li class="tablinks" onclick="openTab(event, 'introduce')" >introduce</li>
+      <li class="tablinks" onclick="openTab(event, 'culture')">culture</li>
+      <li class="tablinks" onclick="openTab(event, 'management')">management</li>
+      <li class="tablinks" onclick="openTab(event, 'VCR')">VCR</li>
+      <li class="tablinks" onclick="openTab(event, 'advance')">advance</li>
+      <li class="tablinks" onclick="openTab(event, 'contact')">contact</li>        
+    </ul>  {% endcomment %}           
     <div id="tab_bar">  
                 <ul>  
                     <li id="tab-introduce" onclick="myclick('introduce')" style="border-bottom: 3px solid #1DD1BC;color: #1DD1BC;">  
@@ -84,64 +91,55 @@
                     <li id="tab-culture" onclick="myclick('culture')">  
                       culture  
                     </li>  
-                    <li id="tab-VCR" onclick="myclick('VCR')">  
-                      VCR  
-                    </li>  
                 </ul>  
             </div>  
 
 </div>
 </div>
   {% comment %}图文介绍公司基本信息{% endcomment %}
-    <div class="container  ">
-      <div class="content">
-        <div class="tab_css" id="tab-introduce_content" style="display: block">
-          <div class="row " id="tab-introduce">
-            <div class="cell">
-              <div>
-                <img src="{% static param.introduction.introduction_param_dict.1.img_path %}" alt="图片" />
-              </div>
+    <div class="container content ">
+      <div class="tab_css" id="tab-introduce_content" style="display: block">
+        <div class="row tab-content active " id="tab-introduce">
+          <div class="cell">
+            <div>
+              <img src="{% static param.introduction.introduction_param_dict.1.img_path %}" alt="图片" />
             </div>
-            <div class="cell word-wrap">
-              <div>
-                {% for key, value in param.introduction.introduction_param_dict.1.info_dict.items %}
-                  <h3>{{ key }}</h3>
-                  <p>{{ value }}</p>
-                {% endfor %}
-              </div>
+          </div>
+          <div class="cell word-wrap">
+            <div>
+              {% for key, value in param.introduction.introduction_param_dict.1.info_dict.items %}
+                <h3>{{ key }}</h3>
+                <p>{{ value }}</p>
+              {% endfor %}
             </div>
-          </div>        
-        </div>
+          </div>
+        </div>        
       </div>
-
-
-      <div class="content">
-        <div class="tab_css" id="tab-management_content">
-          <div class="row" id="tab-management">
-            <div class="cell word-wrap">
-              <div>
-                {% for key, value in param.introduction.introduction_param_dict.2.info_dict.items %}
-                  <h3>{{ key }}</h3>
-                  <ul>
-                    {% for m in value %}
-                      <li>{{ m }}</li>
-                    {% endfor %}
-                  </ul>
-                {% endfor %}
-              </div>
-            </div>
-            <div class="cell">
-              <div>
-                <img src="{% static param.introduction.introduction_param_dict.2.img_path %}" alt="图片" />
-              </div>
-            </div>
-          </div>        
-        </div>
-      </div>
-
 
       <div class="tab_css" id="tab-culture_content">
-        <div class="row tab_css" id="tab-culture">
+        <div class="row tab-content tab_css" id="tab-culture">
+          <div class="cell word-wrap">
+            <div>
+              {% for key, value in param.introduction.introduction_param_dict.2.info_dict.items %}
+                <h3>{{ key }}</h3>
+                <ul>
+                  {% for m in value %}
+                    <li>{{ m }}</li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="cell">
+            <div>
+              <img src="{% static param.introduction.introduction_param_dict.2.img_path %}" alt="图片" />
+            </div>
+          </div>
+        </div>        
+      </div>
+
+      <div class="tab_css" id="tab-management_content">
+        <div class="row tab-content tab_css" id="tab-management">
           <div class="cell">
             <div>
               <img src="{% static param.introduction.introduction_param_dict.3.img_path %}" alt="图片" />
@@ -162,45 +160,36 @@
         </div>        
       </div>
 
-      <div class="tab_css" id="tab-VCR_content">
-        <div class="centered-heading" id="tab-VCR">
-          <video class="centered-heading" controls width="1280" height="720">
-            <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR" />Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
       
-
+      <div class="centered-heading tab-content" id="VCR">
+        <video class="centered-heading" controls width="1280" height="720">
+          <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR" />Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
 
     {% comment %}优势介绍{% endcomment %}
-    <div id="content">
-      <div  class="tab_css" id="tab-advance_content">
-        <main class="container" id="tab-advance">
-          <section class="pt-4 pb-5">
-            <h1 class="mb-4 font-weight-bold centered-heading">竞争优势</h1>
-    
-            {% for competitive_edge_param in param.competitive.competitive_edge_param_list %}
-              <div class="jumbotron jumbotron-xl jumbotron-fluid overlay {{ competitive_edge_param.bg_color }}" style="background-size:cover; background-image:url({% static competitive_edge_param.bg_img %});">
-                <div class="container text-center text-white h-100">
-                  <h1 class="display-2">{{ competitive_edge_param.competitive_title }}</h1>
-                  <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point1 }}</h5>
-                  <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point2 }}</h5>
-                </div>
-                <p class="bottom-align-text-absolute">
-                  <span class="d-block text-center text-white">HEDE</span>
-                </p>
-              </div>
-            {% endfor %}
-          </section>
-        </main>
-      </div>
+    <main class="container tab-content" id="advance">
+      <section class="pt-4 pb-5">
+        <h1 class="mb-4 font-weight-bold centered-heading">竞争优势</h1>
 
-    </div>
-
+        {% for competitive_edge_param in param.competitive.competitive_edge_param_list %}
+          <div class="jumbotron jumbotron-xl jumbotron-fluid overlay {{ competitive_edge_param.bg_color }}" style="background-size:cover; background-image:url({% static competitive_edge_param.bg_img %});">
+            <div class="container text-center text-white h-100">
+              <h1 class="display-2">{{ competitive_edge_param.competitive_title }}</h1>
+              <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point1 }}</h5>
+              <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point2 }}</h5>
+            </div>
+            <p class="bottom-align-text-absolute">
+              <span class="d-block text-center text-white">HEDE</span>
+            </p>
+          </div>
+        {% endfor %}
+      </section>
+    </main>
 
     {% comment %}品牌方{% endcomment %}
-    {% comment %} <div class="container">
+    <div class="container">
       <h1 class="centered-heading">合作品牌方</h1>
       <div class="slider-container">
         <div class="slider">
@@ -214,12 +203,12 @@
           <img src="{% static 'img/demo/品牌方.png' %}" alt="Image 7" />
         </div>
       </div>
-    </div> {% endcomment %}
+    </div>
 
     {% comment %}insert your code here{% endcomment %}
 
     {% comment %}联系人{% endcomment %}
-    <div class="container" id="contact">
+    <div class="container tab-content" id="contact">
       <div class="container" id="contact_info">
         <h1 class="centered-heading">商务联系</h1>
         <h4 class="text">联系人：{{ param.contact.param.name }}</h4>
@@ -327,6 +316,30 @@
         })
       })
     </script>
+    {% comment %}  {% endcomment %}
+    <script>
+      function openTab(evt, tabName) {
+          // 获取所有选项卡内容
+          var tabcontent = document.getElementsByClassName("tab-content");
+          // 隐藏所有选项卡内容
+          for (var i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].classList.remove('active');
+          }
+          // 获取所有选项卡按钮
+          var tablinks = document.getElementsByClassName("tablinks");
+          // 取消所有选项卡按钮的激活状态
+          for (var i = 0; i < tablinks.length; i++) {
+              tablinks[i].classList.remove('active');
+          }
+          // 显示当前选项卡内容
+          document.getElementById(tabName).classList.add('active');
+          // 将当前选项卡按钮设置为激活状态
+          evt.currentTarget.classList.add('active');
+      }
+      // 默认显示第一个选项卡
+      document.getElementById("tab1").style.display = "block";
+      document.getElementsByClassName("tablinks")[0].classList.add('active');
+      </script>
 
     <script>
       var myclick = function(v) {  
