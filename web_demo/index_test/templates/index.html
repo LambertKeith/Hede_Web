@@ -24,18 +24,18 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#"><strong>{{param.title.title_param.brand_str}}</strong></a>
+        <a class="navbar-brand" href="#"><strong>{{ param.title.title_param.brand_str }}</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-7" aria-controls="navbarNavDropdown-7" aria-expanded="false" aria-label="Toggle navigation" style=""><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown-7">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">{{param.title.title_param.index_str}} <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">{{ param.title.title_param.index_str }} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">{{param.title.title_param.more_str}}</a>
+              <a class="nav-link" href="#">{{ param.title.title_param.more_str }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contactLink" id="contactLink">{{param.title.title_param.contact_str}}</a>
+              <a class="nav-link" href="#contactLink" id="contactLink">{{ param.title.title_param.contact_str }}</a>
             </li>
             <li class="nav-item dropdown">
               {% comment %} <a class="nav-link dropdown-toggle" href="https://designrevision.com" id="navbarDropdownMenuLink-7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">服务</a> {% endcomment %}
@@ -53,9 +53,9 @@
         <div class="container-fluid text-white h-100">
           <div class="d-lg-flex align-items-center justify-content-between text-center pl-lg-5">
             <div class="col pt-4 pb-4">
-              <h1 class="display-3">{{param.head.head_param.name_str}} <strong>{{param.head.head_param.welcome_str}}</strong></h1>
+              <h1 class="display-3">{{ param.head.head_param.name_str }} <strong>{{ param.head.head_param.welcome_str }}</strong></h1>
               {% comment %} <h5 class="font-weight-light mb-4">致力于成为鞋靴类电商<strong>领导品牌</strong> & <strong><i class="fab fa-sass fa-2x text-info"></i></strong></h5> {% endcomment %}
-              <h5 class="font-weight-light mb-4">{{param.head.head_param.slogan_str}}</h5>
+              <h5 class="font-weight-light mb-4">{{ param.head.head_param.slogan_str }}</h5>
               {% comment %} <a href="#" class="btn btn-lg btn-outline-white btn-round">获取更多信息</a> {% endcomment %}
             </div>
             <div class="col align-self-bottom align-items-right text-right">
@@ -71,9 +71,7 @@
     {% comment %}图文介绍公司基本信息{% endcomment %}
 
     <div class="container">
-
       <table>
-
         <tr>
           <td>
             <div>
@@ -127,12 +125,10 @@
             </div>
           </td>
         </tr>
-
       </table>
       <div class="centered-heading">
-        <video class="centered-heading" controls width="1280" height="720" >
-          <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR">
-          Your browser does not support the video tag.
+        <video class="centered-heading" controls width="1280" height="720">
+          <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR" />Your browser does not support the video tag.
         </video>
       </div>
     </div>
@@ -141,21 +137,19 @@
     <main class="container">
       <section class="pt-4 pb-5">
         <h1 class="mb-4 font-weight-bold centered-heading">竞争优势</h1>
-        
-        {% for competitive_edge_param in param.competitive.competitive_edge_param_list %}
-        <div class="jumbotron jumbotron-xl jumbotron-fluid overlay {{competitive_edge_param.bg_color}}" style="background-size:cover; background-image:url({% static competitive_edge_param.bg_img %});">
-          <div class="container text-center text-white h-100">
-            <h1 class="display-2">{{competitive_edge_param.competitive_title}} </h1>
-            <h5 class="font-weight-light">{{competitive_edge_param.competitive_point1}}</h5>
-            <h5 class="font-weight-light">{{competitive_edge_param.competitive_point2}}</h5>
-          </div>
-          <p class="bottom-align-text-absolute">
-            <span class="d-block text-center text-white">HEDE </span>
-          </p>
-        </div>
-       
-        {% endfor %}    
 
+        {% for competitive_edge_param in param.competitive.competitive_edge_param_list %}
+          <div class="jumbotron jumbotron-xl jumbotron-fluid overlay {{ competitive_edge_param.bg_color }}" style="background-size:cover; background-image:url({% static competitive_edge_param.bg_img %});">
+            <div class="container text-center text-white h-100">
+              <h1 class="display-2">{{ competitive_edge_param.competitive_title }}</h1>
+              <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point1 }}</h5>
+              <h5 class="font-weight-light">{{ competitive_edge_param.competitive_point2 }}</h5>
+            </div>
+            <p class="bottom-align-text-absolute">
+              <span class="d-block text-center text-white">HEDE</span>
+            </p>
+          </div>
+        {% endfor %}
       </section>
     </main>
 
@@ -182,10 +176,10 @@
     <div class="container">
       <div class="container" id="contact_info">
         <h1 class="centered-heading">商务联系</h1>
-        <h4 class="text">联系人：{{param.contact.param.name}}</h4>
-        <h4 class="text">邮箱：{{param.contact.param.mail}}</h4>
-        <h4 class="text">电话：{{param.contact.param.phone}}</h4>
-      </div>      
+        <h4 class="text">联系人：{{ param.contact.param.name }}</h4>
+        <h4 class="text">邮箱：{{ param.contact.param.mail }}</h4>
+        <h4 class="text">电话：{{ param.contact.param.phone }}</h4>
+      </div>
     </div>
 
     <footer class="bg-black pb-5">
@@ -268,22 +262,24 @@
         </div>
       </div>
     </footer>
-  <script src="/static/js/vendor/jquery.min.js" type="text/javascript"></script>
-  <!-- 使用 jQuery 实现的功能 -->
-<script>
-  // 使用 jQuery 等待页面加载完成
-  $(document).ready(function() {
-      // 给链接元素添加点击事件监听器
-      $('#contactLink').click(function(event) {
+    <script src="/static/js/vendor/jquery.min.js" type="text/javascript"></script>
+    <!-- 使用 jQuery 实现的功能 -->
+    <script>
+      // 使用 jQuery 等待页面加载完成
+      $(document).ready(function () {
+        // 给链接元素添加点击事件监听器
+        $('#contactLink').click(function (event) {
           // 阻止默认行为，即阻止链接的默认跳转行为
-          event.preventDefault();
+          event.preventDefault()
           // 使用 jQuery 的 animate 方法将页面滚动到目标元素所在位置
-          $('html, body').animate({
+          $('html, body').animate(
+            {
               scrollTop: $('#contact_info').offset().top
-          }, 'slow');
-      });
-  });
-  </script>
+            },
+            'slow'
+          )
+        })
+      })
+    </script>
   </body>
-
 </html>
