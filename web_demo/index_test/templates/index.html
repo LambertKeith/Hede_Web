@@ -30,7 +30,7 @@
         <div id="tab_bar">
           <ul class="navbar-brand">
             {% comment %} <li id="tab-ico" style="color: #000000;"><strong>赫德</strong>HEDE</li> {% endcomment %}
-            <li id="tab-index" onclick="myclick('index')" style="border-bottom: 3px solid #1DD1BC;color: #1DD1BC;color: #000000;"><strong>赫德</strong>HEDE</li>
+            <li id="tab-index" onclick="myclick('index')" style="border-bottom: 3px solid #CC6600;color: #CC6600;color: #000000;"><strong>赫德</strong>HEDE</li>
             <li id="tab-introduce" onclick="myclick('introduce')">关于我们</li>
             <li id="tab-management" onclick="myclick('management')">管理模型</li>
             <li id="tab-culture" onclick="myclick('culture')">人才文化</li>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="content">
-      <div class="tab_css" id="tab-index_content" style="display: block">
+      <div class="tab_css" id="tab-index_content" style="display: block;" >
         
         <H1 style="color: rgba(0, 0, 0, 0);">赫德</H1>
         {% comment %} <H1 style="color: rgba(0, 0, 0, 0);"> HEDE </H1> {% endcomment %}
@@ -60,36 +60,8 @@
               </div>
             </div>
           </div>
-
-          
-          <hr>
-          <section class="pt-4 pb-5" data-aos="fade-up" id="example-carousel">
-            <h3 class="h5 mb-4 font-weight-bold centered-heading">环境展示</h3>
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              </ol>
-              <div class="carousel-inner shadow-sm rounded">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="{% static '/img/demo/blog4.jpg' %}" alt="First slide" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Mission Beach, San Diego, United States by Matthew Hamilton</h5>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="{% static '/img/demo/blog5.jpg' %}" alt="Second slide" />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Golden Gate Bridge, San Francisco, United States by Tim Foster</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
         </header>
-
       </div>
-
     </div>
 
     {% comment %}图文介绍公司基本信息{% endcomment %}
@@ -102,17 +74,39 @@
               <img src="{% static param.introduction.introduction_param_dict.1.img_path %}" alt="图片" />
             </div>
           </div>
-          <div class="cell word-wrap">
-            <div>
-              {% for key, value in param.introduction.introduction_param_dict.1.info_dict.items %}
-                <h3>{{ key }}</h3>
-                <p>{{ value }}</p>
-              {% endfor %}
+            <div class="cell word-wrap content-box">
+              <div class="">
+                {% for key, value in param.introduction.introduction_param_dict.1.info_dict.items %}
+                  <h3>{{ key }}</h3>
+                  <p>{{ value }}</p>
+                {% endfor %}
+              </div>
             </div>
-          </div>
         </div>
         <hr>
-        <hr>
+        <section class="pt-4 pb-5" data-aos="fade-up" id="example-carousel">
+          <h2 class=" mb-4 font-weight-bold centered-heading">环境展示</h2>
+          <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner shadow-sm rounded">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static '/img/demo/blog4.jpg' %}" alt="First slide" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Mission Beach, San Diego, United States by Matthew Hamilton</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{% static '/img/demo/blog5.jpg' %}" alt="Second slide" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Golden Gate Bridge, San Francisco, United States by Tim Foster</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -125,7 +119,7 @@
               <img src="{% static param.introduction.introduction_param_dict.2.img_path %}" alt="图片" />
             </div>
           </div>
-          <div class="cell word-wrap">
+          {% comment %} <div class="cell word-wrap">
             <div>
               {% for key, value in param.introduction.introduction_param_dict.2.info_dict.items %}
                 <h3>{{ key }}</h3>
@@ -136,7 +130,7 @@
                 </ul>
               {% endfor %}
             </div>
-          </div>
+          </div> {% endcomment %}
 
         </div>
         <hr>
@@ -153,7 +147,7 @@
               <img src="{% static param.introduction.introduction_param_dict.3.img_path %}" alt="图片" />
             </div>
           </div>
-          <div class="cell word-wrap">
+          {% comment %} <div class="cell word-wrap">
             <div>
               {% for key, value in param.introduction.introduction_param_dict.3.info_dict.items %}
                 <h3>{{ key }}</h3>
@@ -164,7 +158,7 @@
                 </ul>
               {% endfor %}
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
         <hr>
       </div>
@@ -174,7 +168,7 @@
       <div class="centered-heading tab-content tab_css" id="tab-VCR_content">
         <H1 style="color: rgba(0, 0, 0, 0);">赫德</H1>
         <video class="centered-heading" controls width="1280" height="720">
-          <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR" />Your browser does not support the video tag.
+          <source src="static/media/宣传片.mp4" type="video/mp4" id="VCR" />
         </video>
         
       </div>
@@ -221,7 +215,11 @@
           <h4 class="text">地址：{{ param.contact.param.address }}</h4>
         </div>
         <hr>
-        <input id="address" type="text" class="text_in" name="pt_particular_loction"/>
+        <div>
+          <div class="col align-self-bottom centered-heading">
+            <img src="{% static param.contact.param.map_img_path %}" class="rounded img-fluid" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -358,13 +356,14 @@
 
     <script>
       var myclick = function (v) {
+        // tab页跳转
         var llis = document.getElementsByTagName('li')
         for (var i = 0; i < llis.length; i++) {
           var lli = llis[i]
 
           if (lli == document.getElementById('tab-' + v)) {
-            lli.style.borderBottom = '3px solid #1DD1BC'
-            lli.style.color = '#1DD1BC'
+            lli.style.borderBottom = '3px solid #CC6600'
+            lli.style.color = '#CC6600'
           } else {
             lli.style.borderBottom = '0px solid #DFDFDF'
             lli.style.color = '#999999'
@@ -381,6 +380,16 @@
             divv.style.display = 'block'
           } else {
             divv.style.display = 'none'
+          }
+        }
+        window.scrollTo(0, 0);
+          // 停止视频播放
+        var video = document.getElementById('VCR');
+        if (video) {
+          var videoElement = video.closest('video'); // 找到包含该<source>元素的<video>元素
+          if (videoElement) {
+            videoElement.pause();
+            videoElement.currentTime = 0; // 重置视频播放进度
           }
         }
       }

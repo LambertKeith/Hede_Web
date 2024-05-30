@@ -22,7 +22,7 @@ class GenerateTitleParamPackage:
 class GenerateHeadParamPackage:
     def __init__(self, ):
         self.head_param = index_models.HeadParam(
-            '赫德电商', '欢迎您', '致力于成为鞋服类电商企业领导品牌', 'img/demo/test.png'
+            '赫德电商', '欢迎您', '致力于成为鞋服类电商企业领导品牌', 'img/demo/封面展示.jpg'
         )
 
 
@@ -52,11 +52,11 @@ class GenerateIntroductionParamPackage:
                                                 introduction_kv1
                                             )
         self.introduction_param_dict["2"] = index_models.IntroductionParam(
-                                                "img/demo/天幕.jpg",
+                                                "img/demo/管理模型.jpg",
                                                 introduction_kv2
                                             )
         self.introduction_param_dict["3"] = index_models.IntroductionParam(
-                                                "img/demo/水池 晚上.jpg",
+                                                "img/demo/人才文化.jpg",
                                                 introduction_kv3
                                             )        
 
@@ -140,4 +140,4 @@ class GenerateCompetitiveEdgeParamPackage:
 
 class GenerateContactParamPackage:
     def __init__(self) -> None:
-        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301', address='温州瓯海区广川大厦广城国际中心5楼502室')
+        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301', address='温州瓯海区广川大厦广城国际中心5楼502室', map_img_path='img/demo/地图.png')
