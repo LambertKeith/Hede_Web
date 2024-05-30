@@ -90,7 +90,7 @@ class GenerateCompetitiveEdgeParamPackage:
 
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
-                "img/demo/品牌矩阵.png", 'overlay-black', 
+                "img/demo/品牌背景.png", 'overlay-black', 
                 '注重多品牌管理', "利润透明化，激励员工创造力", 
                 "契合现代年轻人追求自由、成长的追求"
             )
@@ -114,7 +114,7 @@ class GenerateCompetitiveEdgeParamPackage:
 
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
-                "img/demo/展示间.jpg", 'overlay-black', 
+                "img/demo/渠道-两排堆砌.png", 'overlay-black', 
                 '覆盖全渠道的网络销售途径', "在电商平台和社交平台均有涉足", 
                 "实现了行业前十的业绩"
             )
@@ -140,4 +140,4 @@ class GenerateCompetitiveEdgeParamPackage:
 
 class GenerateContactParamPackage:
     def __init__(self) -> None:
-        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301')
+        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301', address='温州瓯海区广川大厦广城国际中心5楼502室')

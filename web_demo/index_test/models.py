@@ -48,7 +48,8 @@ class CompetitiveEdgeParam:
 
 
 class ContactParam:
-    def __init__(self, name, mail, phone, wechet_QR=None) -> None:
+    def __init__(self, name, mail, phone, address, wechet_QR=None, ) -> None:
         self.name = name
         self.mail = mail
         self.phone = phone
+        self.address = address
