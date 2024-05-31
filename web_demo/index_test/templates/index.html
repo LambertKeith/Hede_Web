@@ -209,15 +209,14 @@
         <H1 style="color: rgba(0, 0, 0, 0);">赫德</H1>
         <div class="" id="contact_info">
           <h1 class="centered-heading">商务联系</h1>
-          <h4 class="text">联系人：{{ param.contact.param.name }}</h4>
-          <h4 class="text">邮箱：{{ param.contact.param.mail }}</h4>
-          <h4 class="text">电话：{{ param.contact.param.phone }}</h4>
-          <h4 class="text">地址：{{ param.contact.param.address }}</h4>
+          {% for i in param.contact.param_dict.text_list %}
+          <h4 class="text">{{ i }}</h4>
+          {% endfor %}
         </div>
         <hr>
         <div>
           <div class="col align-self-bottom centered-heading">
-            <img src="{% static param.contact.param.map_img_path %}" class="rounded img-fluid" />
+            <img src="{% static param.contact.param_dict.img %}" class="rounded img-fluid" />
           </div>
         </div>
       </div>
