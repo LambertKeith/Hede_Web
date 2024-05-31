@@ -140,4 +140,4 @@ class GenerateCompetitiveEdgeParamPackage:
 
 class GenerateContactParamPackage:
     def __init__(self) -> None:
-        self.param = index_models.ContactParam('杨先生', '272228208@qq.com', '13506668301', address='温州瓯海区广川大厦广城国际中心5楼502室', map_img_path='img/demo/地图.png')
+        self.param = index_models.ContactParam('杨总', '272228208@qq.com', '13506668301', address='温州瓯海区广川大厦广城国际中心5楼502室', map_img_path='img/demo/地图.png')
