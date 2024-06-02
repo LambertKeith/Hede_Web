@@ -40,6 +40,5 @@ def show_index(request):
         'competitive': show_index_param_server.GenerateCompetitiveEdgeParamPackage(),
         'contact': show_index_param_server.GenerateContactParamPackage(),
     }
-    #print(param["competitive"].competitive_edge_param_list[0].competitive_point2)
-    #return render(request, "index_template.html", {"param":param})
+    
     return render(request, "index.html", {"param":param})

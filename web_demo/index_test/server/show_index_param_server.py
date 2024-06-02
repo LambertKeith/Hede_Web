@@ -47,9 +47,43 @@ class GenerateIntroductionParamPackage:
                 "鼓励员工拥抱新技术，并融入到工作中，提升自我能力，跟上新时代发展。"
             ]
         }
+
+        pic_list = [
+            {
+                "number": '0', 
+                "path": "/img/demo/公司门口（电梯进）.jpg", 
+                "class": "active", 
+                "alt": "First slide"
+            }, 
+            {
+                "number": '1', 
+                "path": "/img/demo/鞋展柜.jpg", 
+                "class": "", 
+                "alt": "Second slide"                
+            },
+            {
+                "number": '2', 
+                "path": "/img/demo/阳台.jpg", 
+                "class": "", 
+                "alt": "Second slide"                
+            },
+            {
+                "number": '3', 
+                "path": "/img/demo/水池 晚上.jpg", 
+                "class": "", 
+                "alt": "Second slide"                
+            },
+            {
+                "number": '4', 
+                "path": "/img/demo/天幕.jpg", 
+                "class": "", 
+                "alt": "Second slide"                
+            },
+        ]
         self.introduction_param_dict["1"] = index_models.IntroductionParam(
-                                                'img/demo/test.png',
-                                                introduction_kv1
+                                                'img/demo/公司门头（已修）.jpg',
+                                                introduction_kv1,
+                                                gallery_list=pic_list
                                             )
         self.introduction_param_dict["2"] = index_models.IntroductionParam(
                                                 "img/demo/管理模型.jpg",
@@ -74,15 +108,15 @@ class GenerateCompetitiveEdgeParamPackage:
         
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
-                "img/demo/鞋子设计工作图.JPG", 'overlay-blue', 
-                '强目标化管理和运营小组制', "以结果为导向，高效率、可执行、可量化", 
+                "img/demo/鞋子设计工作图 - 副本.JPG", 'overlay-blue', 
+                '强目标化管理+运营小组制', "以结果为导向，高效率、可执行、可量化", 
                 "每个小组都具备老板思维，对决策和结果负责"
             )
         )
 
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
-                "img/demo/23年年会.JPG", 'overlay-red', 
+                "img/demo/荣誉证书.jpg", 'overlay-red', 
                 '小组分红制', "利润透明化，激励员工创造力", 
                 "契合现代年轻人追求自由、成长的追求"
             )
@@ -115,7 +149,7 @@ class GenerateCompetitiveEdgeParamPackage:
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
                 "img/demo/渠道-两排堆砌.png", 'overlay-black', 
-                '覆盖全渠道的网络销售途径', "在电商平台和社交平台均有涉足", 
+                '网络销售全渠道覆盖', "在电商平台和社交平台均有涉足", 
                 "实现了行业前十的业绩"
             )
         )
@@ -130,7 +164,7 @@ class GenerateCompetitiveEdgeParamPackage:
 
         self.competitive_edge_param_list.append(
             index_models.CompetitiveEdgeParam(
-                "img/demo/开会.JPG", 'overlay-red', 
+                "img/demo/大厅工作照.jpg", 'overlay-red', 
                 '强大精细的运营团队', "超过100名专业团队成员", 
                 "杭州分公司将吸纳更多优秀人才"
             )
