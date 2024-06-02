@@ -28,9 +28,10 @@ class HeadParam:
 class IntroductionParam:
     """公司介绍参数类
     """    
-    def __init__(self, img_path, info_dict, gallery_list=[]) -> None:
+    def __init__(self, img_path, info_dict, business_culture, gallery_list=[]) -> None:
         self.img_path = img_path
         self.info_dict  = info_dict
+        self.business_culture = business_culture
         self.gallery_list = gallery_list
 
 
